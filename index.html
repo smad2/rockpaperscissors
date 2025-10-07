@@ -1,13 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+
     <title>Rock Paper Scissors!</title>
 </head>
+
 <body>
-    
-    
+    <main class="container">
+        <div class="header">
+            <h1 id="title">ROCK PAPER SCISSORS</h1>
+            <p id="subtitle">Will you beat the AI?</p>
+        </div>
+        <div class="keyboard-shortcuts-container">
+            <div class="keyboard-shortcuts">
+                <h3 class="keyboard-shortcuts-title">Keyboard Shortcuts</h3>
+                <div class="shortcuts">
+                    <div class="shortcut">
+                        <div class="little-box">R</div>
+                        <span class="shortcut-desc">Select Rock</span>
+                    </div>
+                    <div class="shortcut">
+                        <div class="little-box">P</div>
+                        <span class="shortcut-desc">Select Paper</span>
+                    </div>
+                    <div class="shortcut">
+                        <div class="little-box">S</div>
+                        <span class="shortcut-desc">Select Scissors</span>
+                    </div>
+                    <div class="shortcut">
+                        <div class="little-box">Esc</div>
+                        <span class="shortcut-desc">Reset Game</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+        <div class="game-container">
+            <div id="player-side" class="card glass-effect neon-border">
+                <div class="player-content">
+                    <div class="player-header">
+                        <h2>Player</h2>
+                        <div>
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+
+                    <div class="weapons">
+                        <button id="rock-btn" class="weapon-btn">
+                            <div class="weapon-icon">
+                                <i class="fas fa-hand-rock"></i>
+                            </div>
+                            <span>ROCK</span>
+                        </button>
+                        <button id="paper-btn" class="weapon-btn">
+                            <div class="weapon-icon">
+                                <i class="fas fa-hand-paper"></i>
+                            </div>
+                            <span>PAPER</span>
+                        </button>
+                        <button id="scissors-btn" class="weapon-btn">
+                            <div class="weapon-icon">
+                                <i class="fas fa-hand-scissors "></i>
+                            </div>
+                            <span>SCISSORS</span>
+                        </button>
+                    </div>
+                    <div>
+                        <p class="text">Your selection:</p>
+                        <div id="player-choice">-</div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="battle-side" class="card glass-effect">
+                <div class="battle-content">
+                    <h2 class="vs-text">VS</h2>
+                    <h2>Round Result</h2>
+                    <div id="round-result">Choose your weapon!</div>
+                    <button id="reset-game-btn">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                        <span class="button-text">RESET GAME</span>
+                    </button>
+
+                </div>
+            </div>
+
+            <div id="computer-side" class="card glass-effect neon-border">
+                <div class="computer-content">
+                    <div class="computer-header">
+                        <h2>Computer</h2>
+                        <div>
+                            <i class="fas fas fa-robot"></i>
+                        </div>
+                    </div>
+                    <i id="computer-choice-icon" class="fas fa-question"></i>
+                    <div>
+                        <p class="text">Computer selection:</p>
+                        <div id="computer-choice">-</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="score-side">
+            <div id="player-score-side" class="card glass-effect neon-border">
+                <h3>PLAYER SCORE</h3>
+                <div class="score-badge">
+                    <span id="player-score">0</span>
+                </div>
+                <p>Your victories</p>
+            </div>
+
+            <div id="computer-score-side" class="card glass-effect neon-border">
+                <h3>COMPUTER SCORE</h3>
+                <div class="score-badge">
+                    <span id="computer-score">0</span>
+                </div>
+                <p>Computer's victories</p>
+            </div>
+        </div>
+
+        <div class="history-side">
+            <div class="history-container card glass-effect neon-border">
+                <div class="history-header">
+                    <h3 class="history-header-text">Battle History</h3>
+                    <i class="history-header-icon fas fa-clock"></i>
+                </div>
+                <div id="history-list" class="history-list">
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+        <!-- Victory Modal -->
+        <div id="victory-modal" class="modal hidden">
+            <div class="glass-effect modal-content">
+                <h2 class="victory-text">Victory!</h2>
+                <p class="text-white">Congratulations! You've won the game!</p>
+                <button id="play-again-btn" onclick="location.reload()">
+                    Play Again
+                </button>
+            </div>
+        </div>
+
+        <!-- Defeat Modal -->
+        <div id="defeat-modal" class="modal hidden">
+            <div class="glass-effect modal-content">
+                <h2 class="defeat-text">Defeat!</h2>
+                <p class="text-white">Computer beats you!</p>
+                <button id="try-again-btn" onclick="location.reload()">
+                    Revenge!
+                </button>
+            </div>
+        </div>
+        <script type="module" src="./src/main.js"></script>
+    </main>
+
+
+
+
 </body>
+
 </html>

@@ -1,0 +1,589 @@
+body {
+    background: linear-gradient(90deg, rgba(255, 168, 168, 1) 0%, rgba(126, 178, 242, 1) 100%);
+}
+
+
+/* Modernize font */
+body,
+.glass-effect,
+.weapon-btn {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, ui-monospace, sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+.header {
+    text-align: center;
+    margin: 20px 0;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#title {
+    font-size: 50px;
+    font-family: "Hachi Maru Pop";
+}
+
+#subtitle {
+    font-size: 20px;
+    font-style: italic;
+    font-family: monospace;
+
+}
+
+.keyboard-shortcuts-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 800px;
+
+}
+
+.keyboard-shortcuts-title {
+    background: linear-gradient(90deg, rgba(255, 168, 168, 1) 0%, rgba(126, 178, 242, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 5px;
+
+}
+
+.keyboard-shortcuts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(28, 29, 29, 0.795);
+    border: 1px solid rgba(173, 60, 60, 0.05);
+    border-radius: 10px;
+    padding: 10px;
+    flex: 1;
+    gap:5px
+
+}
+
+.shortcuts {
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.shortcut{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:40px;
+    padding: 6px 12px;
+    border-radius: 12px;
+    background: rgba(117, 121, 121, 0.37);
+    transition: background-color 0.5s;
+}
+.shortcut:hover{
+    background: rgba(254, 255, 255, 0.37);
+}
+
+
+.shortcut-desc{
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.little-box{
+    background: rgba(0, 0, 0, 0.616);
+    font-size: 15px;
+    font-weight: 800;
+    color: #e0f2fe;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-family: monospace;
+}
+
+
+
+/* Glassmorphism effect */
+.glass-effect {
+    background: rgba(245, 7, 7, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease, border 0.3s ease;
+}
+
+.card {
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: background 0.3s ease, border 0.3s ease;
+    color: #fff;
+    text-align: center;
+}
+
+.card:hover{
+    background: rgba(254, 255, 255, 0.062);
+
+}
+
+.game-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    gap: 20px;
+}
+
+.player-header,
+.computer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    font-family: "Hachi Maru Pop";
+
+}
+
+.vs-text {
+    font-size: 30px;
+
+}
+
+
+.player-content,
+.battle-content,
+.computer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    flex: 1;
+}
+
+.weapons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+.weapon-btn.active {
+    box-shadow: 0 0 10px rgba(126, 178, 242, 1);
+}
+
+.weapon-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 30px;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weapon-btn:hover,
+#reset-game-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+#try-again-btn,
+#play-again-btn {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 10px 30px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+#try-again-btn:hover,
+#play-again-btn:hover {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+#try-again-btn {
+    background: rgba(239, 68, 68, 0.829);
+    border: 1px solid rgb(121, 1, 1);
+}
+
+#play-again-btn {
+    background: rgba(39, 185, 88, 0.829);
+    border: 1px solid rgb(1, 121, 7);
+}
+
+
+#reset-game-btn {
+    background: #22c45d;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 10px 30px;
+    color: #fff;
+    cursor: pointer;
+
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+}
+
+#round-result {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: #e0f2fe;
+    padding: 1rem;
+    border-radius: 12px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(53, 56, 61, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, border 0.3s ease;
+
+
+}
+
+
+
+.score-badge.updated {
+    animation: scoreUpdate 0.5s ease-in-out;
+}
+
+@keyframes scoreUpdate {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse-animation {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(100, 200, 255, 0.7);
+    }
+
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 10px rgba(100, 200, 255, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(100, 200, 255, 0);
+    }
+}
+
+@keyframes spin-fast {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spin-animation {
+    animation: spin-fast 0.3s ease-in-out;
+}
+
+#computer-choice-icon {
+    background-color: gray;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 168, 168, 1);
+    padding: 1.5em;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.score-badge {
+    background: rgba(53, 56, 61, 0.5);
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+}
+
+#player-choice,
+#computer-choice {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+#player-score,
+#computer-score {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 800;
+    color: #e0f2fe;
+
+}
+
+.score-side,
+.history-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+
+#player-side,
+#computer-side,
+#battle-side {
+    display: flex;
+    flex: 1;
+}
+
+#player-score-side,
+#computer-score-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    padding: 0;
+}
+
+
+/* Neon border effect */
+.neon-border {
+    box-shadow: 0 0 15px rgba(66, 153, 225, 0.5);
+    transition: box-shadow 0.3s ease;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.neon-border:hover {
+    box-shadow: 0 0 20px rgba(66, 153, 225, 0.7);
+}
+
+/* Hover scale effect */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+
+#round-result:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#player-side:hover,
+#computer-side:hover,
+#battle-side:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+#victory-modal,
+#defeat-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    /* Añade esto */
+    align-items: center;
+    /* Centra verticalmente */
+    justify-content: center;
+    /* Centra horizontalmente */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Fondo oscuro semi-transparente */
+    z-index: 1000;
+    /* Asegura que esté por encima de todo */
+}
+
+.modal-content {
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 300px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Header */
+
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    font-size: 1.5em;
+
+}
+
+.history-container {
+    padding: 0 20px 30px 20px;
+    flex: 1;
+}
+
+.history-header-icon {
+    font-size: 1.5rem;
+    color: #e0f2fe;
+    padding: 1em;
+}
+
+.history-item {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+.win-history-text,
+.tie-history-text,
+.lose-history-text {
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.win-history-text {
+    color: #22c45d;
+}
+
+.lose-history-text {
+    color: #ef4444;
+}
+
+.tie-history-text {
+    color: #e4e4e4;
+}
+
+/* Confetti Animation */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+    animation: confettiDrop linear forwards;
+    z-index: 1000;
+}
+
+@keyframes confettiDrop {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+    }
+}
+
+/* Add different sizes and shapes for variety */
+.confetti:nth-child(2n) {
+    width: 15px;
+    height: 15px;
+}
+
+.confetti:nth-child(3n) {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.confetti:nth-child(4n) {
+    width: 12px;
+    height: 12px;
+    transform: rotate(45deg);
+}
+
+/* Victory Animation */
+@keyframes victory {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+        text-shadow: 0 0 20px #4ade80;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.victory-text {
+    animation: victory 2s infinite;
+    color: #4ade80;
+}
+
+/* Defeat Animation */
+@keyframes defeat {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+        text-shadow: 0 0 20px #ef4444;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.defeat-text {
+    animation: defeat 2s infinite;
+    color: #ef4444;
+}
